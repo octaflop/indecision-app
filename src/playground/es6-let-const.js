@@ -20,7 +20,6 @@ const nameConst = 'Const Faris';
 // nameConst = 'Const Chebib';
 console.log('nameConst', nameConst);
 
-
 // Scoping
 function getPetName() {
   const petName = 'Hal';
@@ -53,4 +52,4 @@ if (fullName) {
   console.log(letFirstName);
 }
 // fails
-// console.log(letFirstName);
+console.log(letFirstName);
