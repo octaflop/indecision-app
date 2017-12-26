@@ -27,15 +27,17 @@ var user = {
   location: 'SLC, UT'
 }
 
-function getLocation() {
-  return 'Unknown';
+function getLocation(location) {
+  if (location) {
+    return <p>Location: {location}</p>;
+  }
 }
 
 var templateTwo = (
   <div>
-    <h1>{user.name}</h1>
-    <p>Age: {user.age}</p>
-    <p>Location: {getLocation()}</p>
+    <h1>{user.name ? user.name : 'Anonymous'}</h1>
+    {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
+    {getLocation(user.location)}
   </div>
 );
 var appRoot = document.getElementById('app');
