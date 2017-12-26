@@ -1,15 +1,20 @@
 console.log('App.js is running')
 
-var app = {
+const app = {
   title: 'Some Title',
-  subtitle: 'Some subtitle'
+  subtitle: 'Some subtitle',
+  options: ['First', 'Second']
 }
 
 // JSX - Javascript XML
-var template = (
+const template = (
   <div>
     <h1>{app.title}</h1>
-    <p>{app.subtitle}</p>
+    {app.subtitle && <p>{app.subtitle}</p>}
+    <p>
+    {(app.options && app.options.length > 0) ?
+       'Here are your options' : 'No Options'}
+    </p>
     <ol>
       <li></li>
       <li></li>
@@ -17,11 +22,11 @@ var template = (
   </div>
 );
 
-var userName = 'Faris';
-var userAge = 29.5;
-var userLocation = 'Salt Lake City';
+const userName = 'Faris';
+const userAge = 29.5;
+const userLocation = 'Salt Lake City';
 
-var user = {
+const user = {
   name: 'Faris',
   age: 29.5,
   location: 'SLC, UT'
@@ -33,7 +38,7 @@ function getLocation(location) {
   }
 }
 
-var templateTwo = (
+const templateTwo = (
   <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
     {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
@@ -42,5 +47,5 @@ var templateTwo = (
 );
 var appRoot = document.getElementById('app');
 
-// ReactDOM.render(template, appRoot);
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
+// ReactDOM.render(templateTwo, appRoot);
