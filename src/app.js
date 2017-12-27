@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AddOption from './components/AddOption';
+import Option from './components/Option';
 
 class IndecisionApp extends React.Component {
   constructor(props) {
@@ -122,21 +123,5 @@ const Options = (props) => {
     </div>
   )
 }
-
-const Option = (props) => {
-  return (
-    <li key={props.option}>
-      Option: {props.option}
-      <button
-        onClick={(e) => {
-          props.handleDeleteOption(props.option)
-        }}
-      >
-        Remove
-      </button>
-    </li>
-  )
-}
-
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
