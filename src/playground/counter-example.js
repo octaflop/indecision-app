@@ -15,7 +15,7 @@ class Counter extends React.Component {
     console.log('Add One')
     this.setState((prevState) => {
       return {
-        count: prevState.count += 1
+        count: prevState.count + 1
       };
     });
     console.log(this.state);
@@ -24,7 +24,7 @@ class Counter extends React.Component {
     console.log('Minus One')
     this.setState((prevState) => {
       return {
-        count: prevState.count -= 1
+        count: prevState.count - 1
       };
     });
     console.log(this.state);
@@ -34,6 +34,11 @@ class Counter extends React.Component {
     this.setState(() => {
       return {
         count: 0
+      };
+    });
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1 
       };
     });
     console.log(this.state);
