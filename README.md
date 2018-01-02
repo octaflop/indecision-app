@@ -2,3 +2,4 @@
 
 This is an example react-only app
 
+## Example
